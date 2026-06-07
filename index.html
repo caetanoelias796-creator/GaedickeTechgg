@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME & TECH — Escola Augusto Guilherme Gaedicke</title>
+  
+  <!-- SEO & Open Graph Metadata -->
+  <meta name="description" content="Tecnologia, Games e Inteligência Artificial conectando os alunos ao futuro digital. Escola Augusto Guilherme Gaedicke.">
+  <meta name="keywords" content="GAME & TECH, Robótica, IA, Games, Escola Augusto Guilherme Gaedicke, SumoBot, Programação">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="GAME & TECH">
+  <meta property="og:description" content="Tecnologia, Games e Inteligência Artificial conectando os alunos ao futuro digital.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Interactive 3D Model Viewer Library -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- Global Background Video of the Mascot (SunBot) -->
+  <video class="global-bg-video" autoplay muted loop playsinline>
+    <source src="assets/Anime.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="global-bg-overlay"></div>
+
+  <!-- HEADER HUD -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-wrapper">
+        <img src="assets/logo.png" alt="Logo GAME & TECH">
+        <span class="logo-text text-title">Gaedicke Tech</span>
+      </a>
+      
+      <!-- Cyber Hamburguer Menu Toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#evento">O Evento</a></li>
+          <li><a href="#cronograma">Cronograma</a></li>
+          <li><a href="#palestrantes">Conversa Tech</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="javascript:void(0)" onclick="openModal()" style="color: var(--primary-yellow); font-weight: 700;">Inscrição ➔</a></li>
+        </ul>
+        <div class="hud-controls">
+          <button id="btn-beat" class="hud-btn">🎵 Ambient Beat Loop</button>
+          <button id="btn-drone" class="hud-btn">⚡ Ativar Synth Drone</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- HERO SECTION (Módulo 00) -->
+    <section class="hero" id="home">
+      <!-- Background Video overlay for localized radial effect -->
+      <div class="hero-bg-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-subtitle text-title">Escola Augusto Guilherme Gaedicke</div>
+        <h1 class="hero-title-main text-title">GAME & TECH<br><span>EXPERIÊNCIA 2026</span></h1>
+        
+        <p class="hero-description text-serif">
+          Tecnologia, Games e Inteligência Artificial conectando os alunos ao futuro digital em uma experiência épica e imersiva.
+        </p>
+
+        <div class="sys-connect-bar text-title">
+          <span>█ ▓ ▒ ░ GIRA_SYS_CONNECT ░ ▒ ▓ █ SYSTEM_OK █ ▓ ▒ ░ ARENA_ACTIVE ░ ▒ ▓ █ CORES_VERDE_AMARELO █ ▓ ▒ ░ GIRA_SYS_CONNECT ░ ▒ ▓ █ SYSTEM_OK █ ▓ ▒ ░ ARENA_ACTIVE ░ ▒ ▓ █ CORES_VERDE_AMARELO █ ▓ ▒ ░</span>
+        </div>
+
+        <!-- COUNTDOWN REGRESSIVA -->
+        <h3 class="text-title" style="margin-top: 1.5rem; font-size: 1rem; color: var(--primary-green); letter-spacing: 0.15rem;">
+          Contagem Regressiva para a Arena & Mês da Criança
+        </h3>
+        
+        <div class="countdown-container">
+          <div class="countdown-box glass-panel">
+            <div class="countdown-num" id="days">00</div>
+            <div class="countdown-label">Dias</div>
+          </div>
+          <div class="countdown-box glass-panel">
+            <div class="countdown-num" id="hours">00</div>
+            <div class="countdown-label">Horas</div>
+          </div>
+          <div class="countdown-box glass-panel">
+            <div class="countdown-num" id="minutes">00</div>
+            <div class="countdown-label">Minutos</div>
+          </div>
+          <div class="countdown-box glass-panel">
+            <div class="countdown-num" id="seconds">00</div>
+            <div class="countdown-label">Segundos</div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Entrar na Arena ➔</a>
+          <a href="#cronograma" class="btn-secondary">Explorar Programação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 01 // EXPERIÊNCIA GAMER & SUMOBOT -->
+    <section class="module-section gamer-section" id="evento">
+      <div class="section-tag text-title">Módulo 01 // Arena</div>
+      <h2 class="section-title text-title">Experiência Gamer & Robótica</h2>
+      
+      <div class="gamer-grid">
+        <div class="features-col">
+          
+          <div class="feature-card glass-panel">
+            <div class="feature-header">
+              <span class="feature-icon">🎮</span>
+              <h3 class="text-title">Arena Gamer</h3>
+            </div>
+            <p>Área equipada para desafios competitivos, torneios amistosos e co-op local nos maiores sucessos dos videogames de precisão.</p>
+          </div>
+          
+          <div class="feature-card glass-panel">
+            <div class="feature-header">
+              <span class="feature-icon">🧠</span>
+              <h3 class="text-title">Inteligência Artificial</h3>
+            </div>
+            <p>Palestras interativas, desenvolvimento de prompts inteligentes e mostra de ferramentas de IA integradas à educação escolar diária.</p>
+          </div>
+          
+          <div class="feature-card glass-panel">
+            <div class="feature-header">
+              <span class="feature-icon">⚙️</span>
+              <h3 class="text-title">Futuro Tech é Agora</h3>
+            </div>
+            <p>Inovações em robótica autônoma, IoT escolar e linguagens de programação descomplicadas abrindo caminhos para o mercado profissional.</p>
+          </div>
+          
+          <!-- NANO BANANA ASSET / MODEL VIEWER -->
+          <div class="model-container" style="position: relative; margin: 1.5rem 0 0; width: 100%; height: 320px; display: flex; align-items: center; justify-content: center; border-radius: 16px; background: rgba(8, 12, 27, 0.4); border: 1px solid var(--border-color); box-shadow: 0 0 25px var(--primary-yellow-glow); overflow: hidden; backdrop-filter: blur(12px);">
+            <!-- Neon Glow Background Canvas (Procedural Sunflower Tech) -->
+            <canvas id="sunflower-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+            
+            <!-- Interactive 3D Model Viewer -->
+            <model-viewer 
+              src="assets/girassol-3d.glb" 
+              alt="Girassol 3D Nano Banana" 
+              auto-rotate 
+              camera-controls
+              shadow-intensity="1.5"
+              environment-image="neutral"
+              exposure="1.2"
+              interaction-prompt="auto"
+              ar
+              style="width: 100%; height: 100%; background: transparent; z-index: 2; position: relative;">
+              
+              <!-- Poster slot: Custom premium fallback message while loading/if model is missing -->
+              <div slot="poster" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; color: var(--text-secondary); background: transparent; font-family: var(--font-body); pointer-events: none;">
+                <div style="font-size: 2.8rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 15px var(--primary-yellow-glow));">🌻🤖</div>
+                <div class="text-title" style="font-size: 0.9rem; color: var(--primary-yellow); letter-spacing: 0.1rem; margin-bottom: 0.2rem;">Girassol Tech 3D</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary); opacity: 0.8;">[Arraste para rotacionar]</div>
+              </div>
+            </model-viewer>
+          </div>
+          
+        </div>
+
+        <!-- DOHYO VIRTUAL SUMOBOT -->
+        <div class="dohyo-card glass-panel">
+          <div class="dohyo-header">
+            <div class="dohyo-title-info">
+              <h4>DOHYO VIRTUAL GAEDICKE</h4>
+              <span class="dohyo-status-badge text-title">● Modo IA Autônoma Ativo</span>
+            </div>
+            <div class="round-marker green" id="round-name" style="width: auto; padding: 0.3rem 0.8rem; border-radius: 4px;">ROUND#1</div>
+          </div>
+          
+          <p style="font-size: 0.85rem; color: var(--text-secondary); text-align: center;">
+            Ambos os robôs simulam microprocessadores autônomos decidindo ativamente via algoritmos configurados no Dohyo.
+          </p>
+
+          <!-- Arena circle -->
+          <div class="dohyo-arena-wrapper">
+            <div class="dohyo-canvas-container" id="dohyo-arena">
+              <!-- Gaedicke Alpha (Green & Yellow) -->
+              <div class="bot gaedicke-alpha" id="bot-gaedicke">G</div>
+              <!-- Rival Giga (Red) -->
+              <div class="bot rival-giga" id="bot-rival">R</div>
+            </div>
+          </div>
+
+          <!-- Score stats -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+            <span style="font-weight: 700; color: var(--primary-green);">Gaedicke Alpha: <span id="score-gaedicke">0</span></span>
+            <span style="font-weight: 700; color: #ef4444;">Giga Core Rival: <span id="score-rival">0</span></span>
+          </div>
+
+          <!-- History of Collision markers -->
+          <div class="dohyo-history">
+            <h5>Histórico de Rounds (Últimos 10)</h5>
+            <div class="history-rounds">
+              <div class="round-marker" data-round="1">1</div>
+              <div class="round-marker" data-round="2">2</div>
+              <div class="round-marker" data-round="3">3</div>
+              <div class="round-marker" data-round="4">4</div>
+              <div class="round-marker" data-round="5">5</div>
+              <div class="round-marker" data-round="6">6</div>
+              <div class="round-marker" data-round="7">7</div>
+              <div class="round-marker" data-round="8">8</div>
+              <div class="round-marker" data-round="9">9</div>
+              <div class="round-marker" data-round="10">10</div>
+            </div>
+          </div>
+
+          <!-- Real-time Telemetry -->
+          <div class="dohyo-telemetry-grid">
+            <div class="telemetry-item gaedicke">
+              <h5>Velocidade (Azul)</h5>
+              <div class="telemetry-val" id="speed-gaedicke">0 cm/s</div>
+              <h5 style="margin-top:0.5rem;">Temp. Motor</h5>
+              <div class="telemetry-val" id="temp-gaedicke">32°C</div>
+            </div>
+            <div class="telemetry-item rival">
+              <h5>Velocidade (Rival)</h5>
+              <div class="telemetry-val" id="speed-rival">0 cm/s</div>
+              <h5 style="margin-top:0.5rem;">Temp. Motor</h5>
+              <div class="telemetry-val" id="temp-rival">34°C</div>
+            </div>
+          </div>
+
+          <!-- Config controls -->
+          <div class="dohyo-configs">
+            <label for="gaedicke-behavior">Configuração Comportamental (Gaedicke Alpha)</label>
+            <select id="gaedicke-behavior">
+              <option value="orbitary">Busca Orbitária (Fuga rápida + Flange)</option>
+              <option value="offensive">Estratégia Ofensiva (Ataque total de impacto)</option>
+              <option value="defensive">Estratégia Defensiva (Evitar bordas do dohyo)</option>
+            </select>
+          </div>
+
+          <div class="dohyo-controls" style="margin-top: 1.5rem;">
+            <button class="dohyo-btn start" id="btn-combat">⚔️ Iniciar Combate</button>
+            <button class="dohyo-btn reset" id="btn-reset">Resetar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 02 // TIMELINE / CRONOGRAMA -->
+    <section class="module-section timeline-section" id="cronograma">
+      <div class="section-tag text-title">Módulo 02 // Cronograma</div>
+      <h2 class="section-title text-title">Programação do Evento</h2>
+
+      <div class="timeline-filter">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="torneios">Torneios</button>
+        <button class="filter-btn" data-filter="oficinas">Oficinas</button>
+        <button class="filter-btn" data-filter="eventos">Arena Tech</button>
+      </div>
+
+      <div class="timeline-flow">
+        
+        <!-- Item 1 -->
+        <div class="timeline-item" data-category="eventos">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">08:30 — Abertura Cyber</div>
+            <h3>Boas-vindas e Cyber Apresentação</h3>
+            <p>Boas-vindas na quadra principal, apresentação das equipes estudantis e introdução das tecnologias inovadoras expostas no evento.</p>
+            <div class="timeline-location-author">
+              <span>📍 Quadra Principal</span>
+              <span>👤 Direção & Coordenação</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item" data-category="oficinas">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">09:30 — Oficina de Código</div>
+            <h3>Oficina de Games 2D</h3>
+            <p>Criação de jogos 2D no laboratório 1. Entenda como criar mecânicas básicas, movimentação e comportamentos visuais de forma divertida.</p>
+            <div class="timeline-location-author">
+              <span>📍 Laboratório 1</span>
+              <span>👤 Prof. Rodrigo (TI)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item" data-category="torneios">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">10:45 — Torneio Especial</div>
+            <h3>Duelo FIFA 23</h3>
+            <p>Início das eliminatórias no telão gigante da Arena Gamer. Partidas dinâmicas em 5 minutos com ranking no painel de líderes.</p>
+            <div class="timeline-location-author">
+              <span>📍 Pátio Arena Gamer</span>
+              <span>👤 Liga E-Sports Gaedicke</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item" data-category="oficinas">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">13:30 — Oficina Avançada</div>
+            <h3>Explorando IAs Generativas</h3>
+            <p>Oficina prática de Engenharia de Prompt e criação de imagens digitais com inteligência artificial no laboratório de robótica.</p>
+            <div class="timeline-location-author">
+              <span>📍 Lab. Robótica</span>
+              <span>👤 Clara F. & Enzo G. (3ºB)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item" data-category="eventos">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">14:15 — Palestra Industrial</div>
+            <h3>Desenho Industrial & CNC</h3>
+            <p>Aprenda como desenhos técnicos em 3D ganham vida através de máquinas CNC computadorizadas na fabricação moderna de móveis.</p>
+            <div class="timeline-location-author">
+              <span>📍 Auditório Central</span>
+              <span>👤 Pablo (Niruma Móveis)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="timeline-item" data-category="eventos">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">15:00 — Empreendedorismo</div>
+            <h3>Futuro do Hardware & Negócios</h3>
+            <p>Manutenção profissional de computadores, soluções de sistemas comerciais e a realidade empreendedora do mercado de informática.</p>
+            <div class="timeline-location-author">
+              <span>📍 Auditório Central</span>
+              <span>👤 Elias (JC Informática)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="timeline-item" data-category="eventos">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-time">16:30 — Finalização</div>
+            <h3>Encerramento & Prêmios</h3>
+            <p>Distribuição dos certificados virtuais de imersão tecnológica e sorteios especiais de periféricos gamers na quadra principal.</p>
+            <div class="timeline-location-author">
+              <span>📍 Quadra Principal</span>
+              <span>👤 Comissão Organizadora</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MÓDULO 03 // ARENA TECH (CONVIDADOS) -->
+    <section class="module-section speakers-section" id="palestrantes">
+      <div class="section-tag text-title">Módulo 03 // Arena Tech</div>
+      <h2 class="section-title text-title">Conversa na Tecnologia</h2>
+
+      <div class="speakers-grid">
+        
+        <!-- Speaker 1 (Elias) -->
+        <div class="speaker-card glass-panel">
+          <div class="speaker-img-wrapper">
+            <!-- Loading local illustrated poster -->
+            <img src="assets/palestrante_elias.jpg" alt="Elias — JC Informática">
+          </div>
+          <div class="speaker-info">
+            <h3 class="text-title">Elias</h3>
+            <div class="speaker-role">Especialista em TI & Empreendedor</div>
+            <p class="speaker-quote">"A tecnologia muda rápido, mas o conhecimento abre portas para o futuro."</p>
+            <ul class="speaker-topics">
+              <li>Manutenção de Computadores — Cuidados e soluções corporativas.</li>
+              <li>Sistemas comerciais modernos e otimização de infraestrutura.</li>
+              <li>Mercado e dia a dia prático de uma loja de informática local.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Speaker 2 (Pablo) -->
+        <div class="speaker-card glass-panel">
+          <div class="speaker-img-wrapper">
+            <!-- Loading local illustrated poster -->
+            <img src="assets/palestrante_pablo.jpg" alt="Pablo — Niruma Móveis">
+          </div>
+          <div class="speaker-info">
+            <h3 class="text-title">Pablo</h3>
+            <div class="speaker-role">Gerente de Produção & Programador CNC</div>
+            <p class="speaker-quote">"Tecnologia e criatividade transformam ideias em produtos do nosso dia a dia."</p>
+            <ul class="speaker-topics">
+              <li>Desenho Industrial — Do projeto técnico à usinagem final.</li>
+              <li>Programação de máquinas CNC aplicadas a móveis reais.</li>
+              <li>Inovações tecnológicas na indústria de manufatura regional.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="invite-block glass-panel">
+        <h3 class="text-serif">Você pode ser nosso convidado!</h3>
+        <p>Se você trabalha na área de tecnologia ou manufatura e quer compartilhar sua história com a comunidade acadêmica da Escola Gaedicke, chame nosso suporte!</p>
+        <a href="https://wa.me/5554984135062?text=Olá! Gostaria de saber mais sobre o convite para palestrar na Arena Tech do GAME & TECH." target="_blank" class="btn-primary" style="box-shadow: 0 8px 20px var(--primary-green-glow); background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%);">
+          💬 Chame no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- MÓDULO 04 // GALERIA DE MÍDIA -->
+    <section class="module-section gallery-section">
+      <div class="section-tag text-title">Módulo 04 // Registros</div>
+      <h2 class="section-title text-title">Galeria de Mídia</h2>
+
+      <div class="gallery-grid">
+        
+        <div class="gallery-item">
+          <img src="assets/arena_roblox.jpg" alt="Roblox Arena Gaedicke">
+          <div class="gallery-overlay">
+            <h3>Roblox Arena & E-Sports</h3>
+            <p>Computadores gamers de alta performance rodando os mapas mais populares do evento.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800" alt="Robótica IoT">
+          <div class="gallery-overlay">
+            <h3>Robótica & IoT Escolar</h3>
+            <p>Estudantes programando controladores para automação escolar ativa.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800" alt="Óculos VR">
+          <div class="gallery-overlay">
+            <h3>Experiências VR Imersivas</h3>
+            <p>Imersão total com óculos virtuais para testar protótipos 3D.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800" alt="Oficina de Jogos">
+          <div class="gallery-overlay">
+            <h3>Código Criativo</h3>
+            <p>Oficinas dinâmicas de programação no laboratório escolar.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MÓDULO 05 // BENEFÍCIOS PARA A COMUNIDADE -->
+    <section class="module-section benefits-section">
+      <div class="section-tag text-title">Módulo 05 // Benefícios</div>
+      <h2 class="section-title text-title">Benefícios para a Comunidade</h2>
+
+      <div class="benefits-list">
+        
+        <div class="benefit-item glass-panel">
+          <div class="benefit-num">01</div>
+          <h3 class="text-title">Carreiras Digitais</h3>
+          <p>Ampliação do conhecimento dos alunos sobre profissões inovadoras emergentes e novas carreiras técnicas industriais.</p>
+        </div>
+
+        <div class="benefit-item glass-panel">
+          <div class="benefit-num">02</div>
+          <h3 class="text-title">Mercado de Trabalho</h3>
+          <p>Aproximação prática com as principais linguagens e maquinários CNC empregados na fabricação regional de ponta.</p>
+        </div>
+
+        <div class="benefit-item glass-panel">
+          <div class="benefit-num">03</div>
+          <h3 class="text-title">Desenvolvimento Tech</h3>
+          <p>Incentivo ativo ao pensamento lógico, engenharia de prompts rápidos, robótica autônoma e resolução de problemas reais.</p>
+        </div>
+
+        <div class="benefit-item glass-panel">
+          <div class="benefit-num">04</div>
+          <h3 class="text-title">Integração Social</h3>
+          <p>Fortalecimento das conexões ativas entre estudantes, famílias, empresas locais e a vizinhança da Escola Gaedicke.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MÓDULO 06 // VITRINE DE PROJETOS & ROBOT-TRACK -->
+    <section class="module-section portfolio-section" id="projetos">
+      <div class="section-tag text-title">Módulo 06 // Portfólio</div>
+      <h2 class="section-title text-title">Vitrine de Projetos Estudantis</h2>
+
+      <div class="portfolio-grid">
+        
+        <!-- Card 1 -->
+        <div class="project-card glass-panel">
+          <div class="project-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=600" alt="Cyber Dodge">
+            <span class="project-badge text-title">EM ALTA</span>
+          </div>
+          <div class="project-body">
+            <div class="project-author">Por: Lucas S. & Mariana R. (3º Ano A)</div>
+            <h3 class="text-title">Cyber Dodge</h3>
+            <p>Um jogo arcade clássico desenvolvido em HTML5 Canvas. Desvie de glitches espaciais e dispute a pontuação recorde.</p>
+            <div class="project-tags">
+              <span class="project-tag">HTML5 Canvas</span>
+              <span class="project-tag">Web Audio</span>
+            </div>
+            <div class="project-footer">
+              <span style="font-size:0.8rem; color:var(--primary-yellow); font-weight:700;">JOGAR AGORA</span>
+              <div class="project-stats">
+                <span>👁️ 312</span>
+                <span>🤍 142</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card glass-panel">
+          <div class="project-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600" alt="SumoBot">
+            <span class="project-badge text-title">DESTAQUE</span>
+          </div>
+          <div class="project-body">
+            <div class="project-author">Por: Equipe TechShield (2º Ano B)</div>
+            <h3 class="text-title">SumoBot Gaedicke 2.0</h3>
+            <p>Protótipo de robô de combate sumo dotado de sensores de distância infravermelhos e chassi de metal escovado.</p>
+            <div class="project-tags">
+              <span class="project-tag">Arduino C++</span>
+              <span class="project-tag">Ultrassom</span>
+            </div>
+            <div class="project-footer">
+              <span style="font-size:0.8rem; color:var(--primary-green); font-weight:700;">VER PROJETO</span>
+              <div class="project-stats">
+                <span>👁️ 456</span>
+                <span>🤍 189</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card glass-panel">
+          <div class="project-img-wrapper">
+            <img src="assets/mediator_ia.png" alt="Mediator IA">
+            <span class="project-badge text-title">POPULAR</span>
+          </div>
+          <div class="project-body">
+            <div class="project-author">Por: Clara F. & Enzo G. (3º Ano B)</div>
+            <h3 class="text-title">Mediator IA Escolar</h3>
+            <p>Assistente conversacional treinado com documentos da escola e cronogramas para esclarecer dúvidas dos alunos.</p>
+            <div class="project-tags">
+              <span class="project-tag">Gemini API</span>
+              <span class="project-tag">Natural Language</span>
+            </div>
+            <div class="project-footer">
+              <span style="font-size:0.8rem; color:var(--primary-yellow); font-weight:700;">INICIAR CHAT</span>
+              <div class="project-stats">
+                <span>👁️ 289</span>
+                <span>🤍 120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROBOT-TRACK INTERACTIVE SIMULATOR PANEL -->
+      <div class="robot-track-panel glass-panel">
+        <div class="game-info-col">
+          <h4>SIMULADOR INDUSTRIAL 2D</h4>
+          <h3 class="text-title">Robot-Track Simulator</h3>
+          <p>Interaja com o robô da estufa inteligente movendo-o para coletar os chips de dados espalhados no chassi. Teste as mecânicas de amortecimento de cada tipo de chassi.</p>
+          
+          <div style="margin-bottom: 0.8rem; font-size: 0.85rem; color: var(--text-secondary);">
+            Escolha o modelo de chassi ativo:
+          </div>
+          
+          <div class="chassis-tabs">
+            <button class="chassis-tab-btn active" data-chassis="hover">Hover-Glide (Econômico)</button>
+            <button class="chassis-tab-btn" data-chassis="crawler">Crawler (Resistência +50%)</button>
+            <button class="chassis-tab-btn" data-chassis="rover">Rover Scan (Bateria -80% custo)</button>
+          </div>
+
+          <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            🎮 <strong>Como Jogar:</strong> Clique em "Conectar e Iniciar" para calibrar a placa do robô. Em seguida, utilize as teclas <strong>W, A, S, D</strong> ou as <strong>Setas</strong> do teclado (ou o teclado virtual ao lado) para movimentar.
+          </div>
+        </div>
+
+        <div class="game-interactive-col">
+          <!-- Game Board Grid -->
+          <div class="grid-board" id="grid-board">
+            <!-- Generates dynamic grid layout -->
+          </div>
+
+          <div class="game-telemetry">
+            <div class="game-telemetry-item">
+              <h5>Chips Obtidos</h5>
+              <p id="chips-collected">0 / 3</p>
+            </div>
+            <div class="game-telemetry-item">
+              <h5>Bateria Restante</h5>
+              <p id="battery-level">100%</p>
+            </div>
+            <div class="game-telemetry-item">
+              <h5>Passos Efetuados</h5>
+              <p id="steps-moved">0 passos</p>
+            </div>
+            <div class="game-telemetry-item">
+              <h5>Integridade Chassi</h5>
+              <p id="integrity-level">100%</p>
+            </div>
+          </div>
+
+          <!-- Touch Pad Controls -->
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+            <button class="btn-primary" id="btn-connect-robot" style="padding: 0.6rem 1.5rem; font-size:0.85rem;">CONECTAR E INICIAR</button>
+            
+            <div class="game-pad">
+              <button class="game-dir-btn btn-up" id="dpad-up">▲</button>
+              <button class="game-dir-btn btn-left" id="dpad-left">◀</button>
+              <button class="game-dir-btn btn-down" id="dpad-down">▼</button>
+              <button class="game-dir-btn btn-right" id="dpad-right">▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 07 // APOIO E PARCEIROS -->
+    <section class="module-section partners-section">
+      <div class="section-tag text-title">Módulo 07 // Apoio</div>
+      <h2 class="section-title text-title" style="margin-bottom: 2rem;">Apoio & Realização</h2>
+      
+      <div class="partners-slider-container">
+        <div class="partners-slider">
+          <div class="partner-logo"><span>🪑</span> NIRUMA MÓVEIS</div>
+          <div class="partner-logo"><span>💻</span> JC INFORMÁTICA</div>
+          <div class="partner-logo"><span>🛡️</span> GAEDICKE E-SPORTS</div>
+          <div class="partner-logo"><span>🧪</span> CYBERLABS</div>
+          <div class="partner-logo"><span>🛰️</span> FUTURECORP</div>
+          <div class="partner-logo"><span>⚙️</span> TECHSHIELD</div>
+          
+          <!-- Duplicate for infinite effect -->
+          <div class="partner-logo"><span>🪑</span> NIRUMA MÓVEIS</div>
+          <div class="partner-logo"><span>💻</span> JC INFORMÁTICA</div>
+          <div class="partner-logo"><span>🛡️</span> GAEDICKE E-SPORTS</div>
+          <div class="partner-logo"><span>🧪</span> CYBERLABS</div>
+          <div class="partner-logo"><span>🛰️</span> FUTURECORP</div>
+          <div class="partner-logo"><span>⚙️</span> TECHSHIELD</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 08 // DÚVIDAS CORRESPONDENTES -->
+    <section class="module-section faq-section" id="faq">
+      <div class="section-tag text-title">Módulo 08 // Dúvidas</div>
+      <h2 class="section-title text-title">Dúvidas Frequentes</h2>
+
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quem pode participar do evento?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            O evento é 100% gratuito e aberto para todos os alunos da Escola Augusto Guilherme Gaedicke, seus familiares, amigos e moradores interessados da região.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>É preciso levar computador ou controle próprio?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Não é necessário. A escola disponibilizará computadores gamers preparados, consoles de última geração e todos os periféricos de precisão necessários para torneios e oficinas. Os participantes que quiserem competir nos torneios podem opcionalmente trazer controles pessoais.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Qual é o valor da inscrição?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Nenhuma taxa é cobrada. O evento é totalmente subvencionado pela escola e patrocinadores locais parceiros (JC Informática e Niruma Móveis).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Como funciona a certificação digital?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ao realizar a sua inscrição presencial nos totens do evento e confirmar sua presença, você receberá automaticamente em seu e-mail um certificado virtual de imersão tecnológica contendo carga horária de atividades.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <div class="logo-wrapper" style="margin-bottom: 0.5rem;">
+          <img src="assets/logo.png" alt="Logo GAME & TECH" style="height: 30px;">
+          <span class="logo-text text-title" style="font-size: 1rem;">Gaedicke Tech</span>
+        </div>
+        <p class="footer-copy">
+          © 2026 Escola Augusto Guilherme Gaedicke. Todos os direitos reservados.
+          • <a href="javascript:void(0)" onclick="openAdminModal()" style="color: var(--primary-yellow); text-decoration: none; margin-left: 10px; font-weight: bold; cursor: pointer;">🛡️ Painel de Inscritos</a>
+        </p>
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-secondary); text-align: right;">
+        Desenvolvido com tecnologia de vanguarda por Antigravity AI.<br>
+        Parceiro Oficial de Redesign.
+      </div>
+    </div>
+  </footer>
+
+  <!-- GIRABOT CHAT WIDGET -->
+  <div class="girabot-widget">
+    <button class="girabot-btn" id="girabot-widget-btn" title="Conversar com SunBot">
+      <!-- Loading generated image asset -->
+      <img src="assets/girabot.png" alt="SunBot Mascote">
+    </button>
+    
+    <div class="girabot-window glass-panel" id="girabot-window">
+      <div class="girabot-win-header">
+        <div class="girabot-header-info">
+          <img id="sunbot-header-avatar" src="assets/sunbot_feliz.png" alt="SunBot Avatar" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.15); object-fit: cover;">
+          <div style="display: flex; flex-direction: column;">
+            <h4 style="margin: 0; line-height: 1.2;">SunBot Assistente</h4>
+            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 800; opacity: 0.7;">Cobot V1</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+          <button id="sunbot-mute-btn" title="Ativar/Desativar Voz" style="background: transparent; border: none; color: var(--bg-darker); cursor: pointer; font-size: 1.15rem; padding: 2px; display: flex; align-items: center;">🔊</button>
+          <span>● Online</span>
+        </div>
+      </div>
+      
+      <div class="girabot-win-body" id="girabot-body">
+        <div class="msg gira">
+          Olá, visitante ciber-humano! Eu sou o SunBot, mascote oficial do GAME & TECH! 🌻🤖 Quer saber alguma dica sobre as oficinas ou me ver dançar?
+        </div>
+      </div>
+
+      <div class="gira-quick-replies" style="padding: 0.5rem 1rem; background: rgba(8, 12, 27, 0.95); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+        <button class="quick-reply-btn">Dançar 🕺</button>
+        <button class="quick-reply-btn">Dica de Oficina 💡</button>
+        <button class="quick-reply-btn">Cronograma 📅</button>
+      </div>
+      
+      <div class="girabot-win-footer">
+        <input type="text" class="girabot-input" id="girabot-input" placeholder="Digite sua mensagem...">
+        <button class="girabot-send-btn" id="girabot-send">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PAINEL DE INSCRITOS -->
+  <div class="modal-overlay" id="admin-modal">
+      <div class="modal-box" style="max-width: 800px; width: 90%;">
+          <div class="hologram-line"></div>
+          <button class="modal-close" onclick="closeAdminModal()">×</button>
+          
+          <h3 class="modal-title">PAINEL DE ALUNOS INSCRITOS</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">
+              Lista de estudantes que se registraram na Arena Gamer e Oficinas. Dados armazenados localmente neste navegador.
+          </p>
+          
+          <div class="table-responsive" style="max-height: 350px; overflow-y: auto; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 10px; background: rgba(5, 8, 22, 0.6);">
+              <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: var(--text-main); text-align: left; font-size: 13px;">
+                  <thead>
+                      <tr style="background: rgba(245, 158, 11, 0.15); border-bottom: 1px solid rgba(245, 158, 11, 0.3);">
+                          <th style="padding: 12px; font-family: var(--font-title); color: var(--primary-yellow);">Nome</th>
+                          <th style="padding: 12px; font-family: var(--font-title); color: var(--primary-yellow);">Turma</th>
+                          <th style="padding: 12px; font-family: var(--font-title); color: var(--primary-yellow);">Atividade</th>
+                          <th style="padding: 12px; font-family: var(--font-title); color: var(--primary-yellow);">UUID</th>
+                          <th style="padding: 12px; font-family: var(--font-title); color: var(--primary-yellow);">Data/Hora</th>
+                      </tr>
+                  </thead>
+                  <tbody id="admin-table-body">
+                      <!-- Dinamicamente preenchido -->
+                  </tbody>
+              </table>
+          </div>
+          
+          <div style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+              <button class="btn-secondary" style="padding: 10px 20px; border-radius: 10px; font-size: 13px; color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: transparent; cursor: pointer;" onclick="clearRegistrations()">🗑️ Limpar Banco</button>
+              <button class="submit-btn" style="width: auto; margin-top: 0; padding: 10px 20px;" onclick="exportRegistrationsToCSV()">📥 Exportar para Excel (.CSV)</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- MODAL INSCRIÇÃO HOLOGRÁFICA -->
+  <div class="modal-overlay" id="registration-modal">
+      <div class="modal-box">
+          <div class="hologram-line"></div>
+          <button class="modal-close" onclick="closeModal()">×</button>
+          
+          <!-- Registration Form -->
+          <div id="registration-form-content">
+              <h3 class="modal-title">REGISTRO DE ARENA</h3>
+              <form id="arena-form" onsubmit="handleFormSubmit(event)">
+                  <div class="form-group">
+                      <label for="name">Nome do Aluno</label>
+                      <input type="text" class="form-control" id="name" required placeholder="Digite seu nome completo">
+                  </div>
+                  <div class="form-group">
+                      <label for="grade">Ano / Turma</label>
+                      <select class="form-control" id="grade" required>
+                          <option value="" disabled selected>Selecione sua turma</option>
+                          <option value="1º Ano">1º Ano</option>
+                          <option value="2º Ano">2º Ano</option>
+                          <option value="3º Ano">3º Ano</option>
+                          <option value="4º Ano">4º Ano</option>
+                          <option value="5º Ano">5º Ano</option>
+                          <option value="6º Ano">6º Ano</option>
+                          <option value="7º Ano">7º Ano</option>
+                          <option value="8º Ano">8º Ano</option>
+                          <option value="9º Ano">9º Ano</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="activity">Atividade Principal</label>
+                      <select class="form-control" id="activity" required>
+                          <option value="" disabled selected>Escolha onde quer participar</option>
+                          <option value="Jogos">Jogos</option>
+                          <option value="Apenas Oficinas e Demonstrações">Apenas Oficinas e Demonstrações</option>
+                      </select>
+                  </div>
+                  <button type="submit" class="submit-btn">ENVIAR ASSINATURA</button>
+              </form>
+          </div>
+
+          <!-- Ticket Screen (Hidden by Default) -->
+          <div class="hologram-ticket" id="registration-ticket">
+              <h3 class="modal-title" style="color: #10b981;">ARENA PASSPORT</h3>
+              <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Seu registro holográfico foi gravado no banco de dados da arena.</p>
+              
+              <div class="ticket-container">
+                  <div class="ticket-header">
+                      <div class="ticket-title">GAME &amp; TECH</div>
+                      <div class="ticket-subtitle" id="ticket-badge">COMPETIDOR DIGITAL</div>
+                  </div>
+                  <div class="ticket-details">
+                      <div class="ticket-info">
+                          <label>Nome</label>
+                          <span id="ticket-name">NOME COMPLETO</span>
+                      </div>
+                      <div class="ticket-info">
+                          <label>Classe</label>
+                          <span id="ticket-grade">3º ANO A</span>
+                      </div>
+                      <div class="ticket-info">
+                          <label>Torneio / Acesso</label>
+                          <span id="ticket-activity">TORNEIO PRINCIPAL</span>
+                      </div>
+                      <div class="ticket-info">
+                          <label>Data Evento</label>
+                          <span>12 OUT 2026</span>
+                      </div>
+                  </div>
+                  <div class="ticket-code">
+                      <div class="barcode-sim"></div>
+                      <div class="ticket-uuid" id="ticket-uuid">UUID: GT-7389-98F1</div>
+                  </div>
+              </div>
+              
+              <div style="display: flex; gap: 12px; justify-content: center; margin-top: 20px;">
+                  <button class="submit-btn" style="width: auto; margin-top: 0; padding: 12px 24px;" onclick="printTicket()">🖨️ IMPRIMIR</button>
+                  <button class="btn-secondary" style="padding: 12px 24px; border-radius: 12px; font-size: 13px; background: transparent; color: var(--text-main); border: 1px solid var(--border-color); cursor: pointer;" onclick="downloadTicket()">💾 SALVAR PASSPORT</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Load GSAP and ScrollTrigger CDNs for smooth scroll triggers -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,2 +1,2 @@
-# GaedickeTechgg
-GAME &amp; TECH EXPERIENCE 2026
+# GAME & TECH
+Escola Augusto Guilherme Gaedicke GAME & TECH EXPERIÊNCIA 2026
